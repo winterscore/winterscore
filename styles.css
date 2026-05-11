@@ -209,6 +209,7 @@ input[type="range"]:focus-visible {
 .poster-card {
   position: relative;
   overflow: hidden;
+  border-radius: 0;
   background: var(--poster-placeholder);
   aspect-ratio: 7 / 10;
   transform: translateZ(0);
@@ -222,11 +223,23 @@ input[type="range"]:focus-visible {
   border-top-right-radius: 27px;
 }
 
-.poster-card:nth-child(5) {
+.poster-card:nth-child(13) {
   border-bottom-left-radius: 27px;
 }
 
 .poster-card:last-child {
+  border-bottom-right-radius: 27px;
+}
+
+.credits:not(.is-expanded) .poster-card:nth-child(n + 9) {
+  display: none;
+}
+
+.credits:not(.is-expanded) .poster-card:nth-child(5) {
+  border-bottom-left-radius: 27px;
+}
+
+.credits:not(.is-expanded) .poster-card:nth-child(8) {
   border-bottom-right-radius: 27px;
 }
 
@@ -260,7 +273,17 @@ input[type="range"]:focus-visible {
 }
 
 .credits-toggle {
-  display: none;
+  display: block;
+  min-height: 42px;
+  margin: 28px auto 0;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--shared-surface);
+  color: #000000;
+  font-family: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1;
 }
 
 .bio {
@@ -851,7 +874,7 @@ button {
     border-radius: 0;
   }
 
-  .poster-card:nth-child(7) {
+  .poster-card:nth-child(15) {
     border-bottom-left-radius: 27px;
   }
 
