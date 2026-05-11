@@ -108,12 +108,31 @@ trackList.addEventListener("click", (event) => {
 
 const credits = document.querySelector(".credits");
 const creditsToggle = document.querySelector("[data-credits-toggle]");
+const desktopCreditsQuery = window.matchMedia("(min-width: 761px)");
+
+function syncCreditsVisibility() {
+  if (!credits) return;
+  const isExpanded = credits.classList.contains("is-expanded");
+  const visibleLimit = desktopCreditsQuery.matches ? 8 : 4;
+
+  if (creditsToggle) {
+    creditsToggle.style.display = "block";
+  }
+
+  credits.querySelectorAll(".poster-card").forEach((card, index) => {
+    card.hidden = !isExpanded && index >= visibleLimit;
+  });
+}
 
 creditsToggle?.addEventListener("click", () => {
   const isExpanded = credits.classList.toggle("is-expanded");
   creditsToggle.textContent = isExpanded ? "Show Fewer Credits" : "Show More Credits";
   creditsToggle.setAttribute("aria-expanded", String(isExpanded));
+  syncCreditsVisibility();
 });
+
+desktopCreditsQuery.addEventListener("change", syncCreditsVisibility);
+syncCreditsVisibility();
 
 toggle.addEventListener("click", () => {
   if (audio.paused) {
