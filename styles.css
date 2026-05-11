@@ -186,7 +186,7 @@ input[type="range"]:focus-visible {
 }
 
 .credits {
-  padding: 0 24px clamp(96px, 10vw, 142px);
+  padding: 0 24px clamp(64px, 6vw, 88px);
 }
 
 .section-label {
@@ -703,6 +703,11 @@ button {
   width: 25px;
   height: 25px;
   fill: var(--footer-icon);
+  transition: fill 160ms ease;
+}
+
+.instagram:hover svg {
+  fill: #000000;
 }
 
 .legal-page {
@@ -1085,5 +1090,9 @@ button {
   .credits-toggle {
     background: var(--shared-surface);
     color: #ffffff;
+  }
+
+  .instagram:hover svg {
+    fill: #ffffff;
   }
 }
