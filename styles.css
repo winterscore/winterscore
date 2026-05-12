@@ -21,6 +21,7 @@
   --page: #ffffff;
   --surface: #ffffff;
   --shared-surface: #f5f5f7;
+  --credits-toggle-hover: #e7e7eb;
   --panel: var(--shared-surface);
   --player-surface: var(--shared-surface);
   --poster-placeholder: #e8e8ed;
@@ -46,6 +47,7 @@
     --near-black: #f5f5f7;
     --page: #000000;
     --shared-surface: #232326;
+    --credits-toggle-hover: #313136;
     --panel: var(--shared-surface);
     --surface: #1c1c1e;
     --player-surface: var(--shared-surface);
@@ -296,6 +298,15 @@ input[type="range"]:focus-visible {
   font-size: 15px;
   font-weight: 400;
   line-height: 1;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.credits-toggle:hover,
+.credits-toggle:focus-visible {
+  background: var(--credits-toggle-hover);
+  transform: translateY(-1px);
 }
 
 .bio {
