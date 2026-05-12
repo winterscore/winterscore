@@ -909,17 +909,28 @@ button {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.4;
+  text-align: left;
 }
 
 .legal__return a {
-  color: var(--accent);
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  border-radius: 999px;
+  background: var(--shared-surface);
+  color: var(--text);
   text-decoration: none;
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
 }
 
 .legal__return a:hover,
 .legal__return a:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  background: var(--credits-toggle-hover);
+  transform: translateY(-1px);
 }
 
 @media (min-width: 768px) {
