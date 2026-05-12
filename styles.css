@@ -904,6 +904,24 @@ button {
   opacity: 1;
 }
 
+.legal__return {
+  margin: 40px 0 0;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.legal__return a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.legal__return a:hover,
+.legal__return a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 @media (min-width: 768px) {
   .legal {
     padding-left: 40px;
