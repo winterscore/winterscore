@@ -223,7 +223,7 @@ input[type="range"]:focus-visible {
   border-top-right-radius: 27px;
 }
 
-.poster-card:nth-child(17) {
+.poster-card:nth-last-child(4) {
   border-bottom-left-radius: 27px;
 }
 
@@ -247,7 +247,7 @@ input[type="range"]:focus-visible {
   border-radius: 0;
 }
 
-.credits.is-expanded .poster-card:nth-child(17) {
+.credits.is-expanded .poster-card:nth-last-child(4) {
   border-bottom-left-radius: 27px;
 }
 
@@ -896,7 +896,11 @@ button {
     border-radius: 0;
   }
 
-  .poster-card:nth-child(19) {
+  .poster-card:nth-last-child(4) {
+    border-bottom-left-radius: 0;
+  }
+
+  .poster-card:nth-last-child(2) {
     border-bottom-left-radius: 27px;
   }
 
@@ -928,11 +932,11 @@ button {
     border-radius: 0;
   }
 
-  .credits.is-expanded .poster-card:nth-child(17) {
+  .credits.is-expanded .poster-card:nth-last-child(4) {
     border-bottom-left-radius: 0;
   }
 
-  .credits.is-expanded .poster-card:nth-child(19) {
+  .credits.is-expanded .poster-card:nth-last-child(2) {
     border-bottom-left-radius: 27px;
   }
 
