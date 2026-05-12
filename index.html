@@ -34,6 +34,7 @@
             "url": "https://www.winterscore.com/",
             "name": "Winter Score",
             "description": "Film music production home of composer Sebastian Winter.",
+            "inLanguage": "en-US",
             "publisher": {
               "@id": "https://www.winterscore.com/#organization"
             }
@@ -42,9 +43,21 @@
             "@type": "Organization",
             "@id": "https://www.winterscore.com/#organization",
             "name": "Winter Score LLC",
+            "legalName": "Winter Score LLC",
             "url": "https://www.winterscore.com/",
             "email": "sebastian@winterscore.com",
             "logo": "https://www.winterscore.com/assets/images/winter-score-logo-white.png",
+            "founder": {
+              "@id": "https://www.winterscore.com/#sebastian-winter"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "30 N Gould St Ste N",
+              "addressLocality": "Sheridan",
+              "addressRegion": "WY",
+              "postalCode": "82801",
+              "addressCountry": "US"
+            },
             "sameAs": [
               "https://instagram.com/sebastianwinter"
             ]
@@ -54,6 +67,7 @@
             "@id": "https://www.winterscore.com/#sebastian-winter",
             "name": "Sebastian Winter",
             "jobTitle": "Film Composer",
+            "description": "Sebastian Winter is a film composer based between Los Angeles and New York, creating cinematic scores and orchestral music for studio films, thrillers, romantic comedies, and Christmas movies.",
             "url": "https://www.winterscore.com/",
             "email": "sebastian@winterscore.com",
             "image": "https://www.winterscore.com/assets/images/sebastian-winter-portrait.webp",
@@ -71,6 +85,13 @@
               "Christmas movie music",
               "Thriller film music",
               "Horror film music"
+            ],
+            "subjectOf": [
+              {
+                "@type": "CreativeWork",
+                "name": "Winter Score",
+                "url": "https://www.winterscore.com/"
+              }
             ]
           }
         ]
@@ -90,7 +111,8 @@
             <small>Film Music Productions</small>
           </div>
         </div>
-        <h1 id="site-title">Capturing the Unspoken</h1>
+        <h1 id="site-title" class="sr-only">Sebastian Winter, Film Composer</h1>
+        <p class="hero__tagline">Capturing the Unspoken</p>
       </section>
 
       <section class="credits" aria-labelledby="credits-title">
@@ -187,6 +209,8 @@
             <strong>Heart Eyes</strong>, <strong>Until Dawn</strong>, <strong>Wolf Man</strong>,
             <strong>The Friend</strong>, and <strong>David</strong>. Alongside these projects, his original
             scores showcase a style built for scale, emotion, romance, suspense, and cinematic grandeur.
+            His work spans studio genre films, thrillers, romantic comedies, Christmas films, and emotionally
+            driven orchestral storytelling.
           </p>
         </div>
       </section>
@@ -253,10 +277,11 @@
       </a>
       <p>Inquiries: <a href="mailto:sebastian@winterscore.com">sebastian@winterscore.com</a></p>
       <p>
-        Copyright © 2025 Winter Score LLC. All Rights Reserved.
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <span aria-hidden="true"> · </span>
-        <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+        © 2026 Winter Score LLC
+        <span aria-hidden="true"> • </span>
+        <a href="/privacy/">Privacy</a>
+        <span aria-hidden="true"> • </span>
+        <a href="/terms/">Terms</a>
       </p>
     </footer>
 

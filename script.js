@@ -24,10 +24,22 @@ const tracks = [
     src: "assets/audio/playful-seduction.wav",
   },
   {
+    title: "Between the Lines",
+    genre: "Romantic Comedy",
+    duration: "03:18",
+    src: "assets/audio/RomCom_Demo_1_Connection_Moment.wav",
+  },
+  {
     title: "Relentless Pursuit",
     genre: "Action/Adventure",
     duration: "00:28",
     src: "assets/audio/relentless-pursuit.wav",
+  },
+  {
+    title: "Pulse Overdrive",
+    genre: "Action/Adventure",
+    duration: "01:37",
+    src: "assets/audio/Pulse%20Overdrive.wav",
   },
 ];
 
