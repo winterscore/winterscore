@@ -55,6 +55,7 @@ const toggle = player.querySelector("[data-toggle]");
 const prev = player.querySelector("[data-prev]");
 const next = player.querySelector("[data-next]");
 const trackList = player.querySelector("[data-track-list]");
+const playerStatus = player.querySelector("[data-player-status]");
 
 let activeIndex = 0;
 let isSeeking = false;
@@ -64,6 +65,45 @@ function formatTime(value) {
   const minutes = Math.floor(value / 60);
   const seconds = Math.floor(value % 60);
   return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+}
+
+function getTrackLabel(track, isActive = false) {
+  return `${track.title}, ${track.genre}${isActive ? ", current track" : ""}`;
+}
+
+function updatePlayButtonLabel() {
+  const action = audio.paused ? "Play" : "Pause";
+  toggle.setAttribute("aria-label", `${action} ${tracks[activeIndex].title}`);
+}
+
+function updateSeekAccessibility(timeValue = audio.currentTime) {
+  const track = tracks[activeIndex];
+  const durationValue = Number.isFinite(audio.duration) ? formatTime(audio.duration) : track.duration;
+  seek.setAttribute("aria-label", `Seek ${track.title}`);
+  seek.setAttribute("aria-valuetext", `${formatTime(timeValue)} of ${durationValue}`);
+}
+
+function updateTrackStates() {
+  document.querySelectorAll("[data-track]").forEach((item, itemIndex) => {
+    const isActive = itemIndex === activeIndex;
+    const button = item.querySelector("[data-track-button]");
+    const track = tracks[itemIndex];
+
+    item.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-label", getTrackLabel(track, isActive));
+
+    if (isActive) {
+      button.setAttribute("aria-current", "true");
+    } else {
+      button.removeAttribute("aria-current");
+    }
+  });
+}
+
+function playAudio() {
+  audio.play().catch(() => {
+    playerStatus.textContent = `Audio could not be played. Current track: ${getTrackLabel(tracks[activeIndex])}.`;
+  });
 }
 
 function setActiveTrack(index, shouldPlay = false) {
@@ -78,13 +118,13 @@ function setActiveTrack(index, shouldPlay = false) {
   current.textContent = "00:00";
   seek.value = 0;
   setProgress(0);
-
-  document.querySelectorAll("[data-track]").forEach((item, itemIndex) => {
-    item.classList.toggle("is-active", itemIndex === activeIndex);
-  });
+  updateTrackStates();
+  updatePlayButtonLabel();
+  updateSeekAccessibility(0);
+  playerStatus.textContent = `Current track: ${getTrackLabel(track)}.`;
 
   if (shouldPlay) {
-    audio.play();
+    playAudio();
   }
 }
 
@@ -98,7 +138,7 @@ function renderTracks() {
       (track, index) => `
         <li data-track>
           <span class="number">${index + 1}</span>
-          <button type="button" data-track-button="${index}" aria-label="${track.title}, ${track.genre}">
+          <button type="button" data-track-button="${index}" aria-label="${getTrackLabel(track)}">
             <span class="track-title">${track.title}</span>
             <span class="track-genre">${track.genre}</span>
           </button>
@@ -148,7 +188,7 @@ syncCreditsVisibility();
 
 toggle.addEventListener("click", () => {
   if (audio.paused) {
-    audio.play();
+    playAudio();
   } else {
     audio.pause();
   }
@@ -164,16 +204,19 @@ next.addEventListener("click", () => {
 
 audio.addEventListener("play", () => {
   toggle.classList.add("is-playing");
-  toggle.setAttribute("aria-label", "Pause current track");
+  updatePlayButtonLabel();
+  playerStatus.textContent = `Playing ${getTrackLabel(tracks[activeIndex])}.`;
 });
 
 audio.addEventListener("pause", () => {
   toggle.classList.remove("is-playing");
-  toggle.setAttribute("aria-label", "Play current track");
+  updatePlayButtonLabel();
+  playerStatus.textContent = `Paused ${getTrackLabel(tracks[activeIndex])}.`;
 });
 
 audio.addEventListener("loadedmetadata", () => {
   duration.textContent = formatTime(audio.duration);
+  updateSeekAccessibility(audio.currentTime);
 });
 
 audio.addEventListener("timeupdate", () => {
@@ -182,6 +225,7 @@ audio.addEventListener("timeupdate", () => {
   seek.value = progress;
   setProgress(progress);
   current.textContent = formatTime(audio.currentTime);
+  updateSeekAccessibility(audio.currentTime);
 });
 
 audio.addEventListener("ended", () => {
@@ -194,6 +238,7 @@ seek.addEventListener("input", () => {
   const previewTime = (progress / 100) * audio.duration;
   setProgress(progress);
   current.textContent = formatTime(previewTime);
+  updateSeekAccessibility(previewTime);
 });
 
 seek.addEventListener("change", () => {
