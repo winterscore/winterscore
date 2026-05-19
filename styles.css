@@ -616,37 +616,32 @@ button {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--near-black);
-  color: var(--page);
-  box-shadow: none;
+  background: transparent;
+  color: var(--near-black);
   transition:
-    transform 160ms ease,
-    box-shadow 160ms ease;
+    color 160ms ease,
+    transform 160ms ease;
 }
 
 .play-button:hover {
   transform: scale(1.035);
-  box-shadow: none;
 }
 
-.play-button svg {
-  width: 35px;
-  height: 35px;
+.play-button__art {
+  grid-area: 1 / 1;
+  width: 58px;
+  height: 58px;
+  display: block;
+  overflow: visible;
 }
 
-.play-icon {
+.play-button__art circle {
   fill: currentColor;
-  transform: translateX(-2px);
+  transition: fill 160ms ease;
 }
 
 .pause-icon {
   display: none;
-  width: 28px;
-  height: 28px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-width: 3;
 }
 
 .play-button.is-playing .play-icon {
