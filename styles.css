@@ -585,10 +585,12 @@ button {
 .icon-button {
   width: 42px;
   height: 42px;
+  padding: 0;
   display: grid;
   place-items: center;
   border-radius: 50%;
   color: var(--muted);
+  line-height: 0;
   transition:
     background-color 160ms ease,
     color 160ms ease,
@@ -613,11 +615,13 @@ button {
 .play-button {
   width: 58px;
   height: 58px;
+  padding: 0;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: transparent;
   color: var(--near-black);
+  line-height: 0;
   transition:
     transform 160ms ease;
 }
