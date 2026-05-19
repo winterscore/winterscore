@@ -616,8 +616,8 @@ button {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: var(--near-black);
-  color: var(--player-surface);
+  background: transparent;
+  color: var(--near-black);
   transition:
     transform 160ms ease;
 }
@@ -628,25 +628,18 @@ button {
 
 .play-button__art {
   grid-area: 1 / 1;
-  width: 66px;
-  height: 66px;
+  width: 58px;
+  height: 58px;
   display: block;
   overflow: visible;
-  transform-origin: center;
 }
 
-.play-button__art path,
-.play-button__art rect {
+.play-button__art circle {
   fill: currentColor;
-}
-
-.play-icon {
-  transform: none;
 }
 
 .pause-icon {
   display: none;
-  transform: scale(1.08);
 }
 
 .play-button.is-playing .play-icon {
