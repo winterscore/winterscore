@@ -616,10 +616,9 @@ button {
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: transparent;
-  color: var(--near-black);
+  background: var(--near-black);
+  color: var(--player-surface);
   transition:
-    color 160ms ease,
     transform 160ms ease;
 }
 
@@ -635,9 +634,9 @@ button {
   overflow: visible;
 }
 
-.play-button__art circle {
+.play-button__art path,
+.play-button__art rect {
   fill: currentColor;
-  transition: fill 160ms ease;
 }
 
 .pause-icon {

@@ -99,7 +99,7 @@
     </script>
     <link rel="icon" href="assets/images/winter-score-logo-black.png">
     <link rel="preload" href="assets/images/winter-score-logo-white.png" as="image">
-    <link rel="stylesheet" href="styles.css?v=20260517-accessibility">
+    <link rel="stylesheet" href="styles.css?v=20260519-cutout-button-2">
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -263,32 +263,19 @@
               </button>
               <button class="play-button" data-toggle type="button" aria-label="Play current track">
                 <svg class="play-button__art play-icon" viewBox="0 0 64 64" aria-hidden="true">
-                  <defs>
-                    <mask id="player-play-cutout">
-                      <rect width="64" height="64" fill="white"></rect>
-                      <path
-                        d="M26.1 23.15
-                           C26.1 20.65 28.25 19.95 30.2 21.2
-                           L42.25 28.85
-                           C44.75 30.45 44.75 33.55 42.25 35.15
-                           L30.2 42.8
-                           C28.25 44.05 26.1 43.35 26.1 40.85
-                           Z"
-                        fill="black"
-                      ></path>
-                    </mask>
-                  </defs>
-                  <circle cx="32" cy="32" r="29" mask="url(#player-play-cutout)"></circle>
+                  <path
+                    d="M26.1 23.15
+                       C26.1 20.65 28.25 19.95 30.2 21.2
+                       L42.25 28.85
+                       C44.75 30.45 44.75 33.55 42.25 35.15
+                       L30.2 42.8
+                       C28.25 44.05 26.1 43.35 26.1 40.85
+                       Z"
+                  ></path>
                 </svg>
                 <svg class="play-button__art pause-icon" viewBox="0 0 64 64" aria-hidden="true">
-                  <defs>
-                    <mask id="player-pause-cutout">
-                      <rect width="64" height="64" fill="white"></rect>
-                      <rect x="24" y="21" width="5.5" height="22" rx="2.75" fill="black"></rect>
-                      <rect x="34.5" y="21" width="5.5" height="22" rx="2.75" fill="black"></rect>
-                    </mask>
-                  </defs>
-                  <circle cx="32" cy="32" r="29" mask="url(#player-pause-cutout)"></circle>
+                  <rect x="24" y="21" width="5.5" height="22" rx="2.75"></rect>
+                  <rect x="34.5" y="21" width="5.5" height="22" rx="2.75"></rect>
                 </svg>
               </button>
               <button class="icon-button" data-next type="button" aria-label="Next track">
