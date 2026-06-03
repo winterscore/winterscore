@@ -1130,89 +1130,27 @@ button {
 }
 
 .tba-listening {
-  width: min(680px, 100%);
+  width: min(720px, 100%);
   margin-top: clamp(68px, 8vw, 104px);
 }
 
 .tba-player {
-  --surface: rgba(255, 255, 255, 0.78);
-  --shared-surface: rgba(255, 255, 255, 0.78);
-  --hairline: rgba(0, 0, 0, 0.16);
-  --hover-fill: rgba(255, 255, 255, 0.2);
-  --active-fill: rgba(255, 255, 255, 0.2);
-  --text: rgba(255, 255, 255, 0.9);
-  --text-strong: #ffffff;
-  --muted: rgba(255, 255, 255, 0.68);
-  --quiet: rgba(255, 255, 255, 0.54);
-  --near-black: #050505;
-  --accent: #ffffff;
-  color: rgba(255, 255, 255, 0.88);
+  --near-black: #1d1d1f;
+  --shared-surface: #f5f5f7;
+  --player-surface: var(--shared-surface);
+  --text: #1d1d1f;
+  --text-strong: #000000;
+  --muted: #6e6e73;
+  --quiet: #86868b;
+  --hairline: rgba(0, 0, 0, 0.1);
+  --hover-fill: rgba(0, 0, 0, 0.035);
+  --active-fill: var(--shared-surface);
+  --accent: #0071e3;
+  color: var(--text);
 }
 
 .tba-player .player__header {
   display: none;
-}
-
-.tba-player .player__surface {
-  background: rgba(255, 255, 255, 0.76);
-  color: #111111;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(18px);
-}
-
-.tba-player .now-playing__copy h3,
-.tba-player .now-playing__copy p,
-.tba-player .time-row {
-  color: #111111;
-}
-
-.tba-player input[type="range"] {
-  background: linear-gradient(
-    90deg,
-    #111111 0 var(--progress),
-    rgba(0, 0, 0, 0.18) var(--progress) 100%
-  );
-}
-
-.tba-player input[type="range"]::-webkit-slider-thumb {
-  background: #111111;
-  box-shadow: none;
-}
-
-.tba-player input[type="range"]::-moz-range-progress,
-.tba-player input[type="range"]::-moz-range-thumb {
-  background: #111111;
-}
-
-.tba-player .track-list {
-  margin-top: 18px;
-}
-
-.tba-player .track-list li {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-.tba-player .track-list li:hover,
-.tba-player .track-list li.is-active {
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
-}
-
-.tba-player .track-list .number,
-.tba-player .track-list .duration,
-.tba-player .track-genre {
-  color: rgba(255, 255, 255, 0.62);
-}
-
-.tba-player .track-list li.is-active,
-.tba-player .track-list li.is-active .duration,
-.tba-player .track-list li.is-active .number,
-.tba-player .track-list li.is-active .track-title {
-  color: #ffffff;
-}
-
-.tba-player .track-list li.is-active .track-genre {
-  color: rgba(255, 255, 255, 0.72);
 }
 
 .tba-score {
@@ -1345,14 +1283,8 @@ button {
   }
 
   .tba-listening {
+    width: min(440px, calc(100% - 8px));
     margin-top: 56px;
-  }
-
-  .tba-player .track-list li {
-    grid-template-columns: 24px minmax(0, 1fr) 48px;
-    gap: 8px;
-    padding-right: 12px;
-    padding-left: 8px;
   }
 
   .tba-score {
