@@ -1,19 +1,19 @@
 const tracks = [
   {
-    title: "Finale (MIDI mockup)",
-    genre: "Orchestral mockup",
+    title: "Finale",
+    genre: "MIDI Mockup",
     duration: "04:15",
     src: "/assets/audio/Finale%20(MIDI%20mockup).mp3",
   },
   {
-    title: "Audio snippet #1 from live reading at Juilliard",
-    genre: "Live reading",
+    title: "Gravitas",
+    genre: "Live Reading at Juilliard",
     duration: "01:25",
     src: "/assets/audio/Audio%20snippet%20%231%20from%20live%20reading%20at%20Juilliard.wav",
   },
   {
-    title: "Audio snippet #2 from live reading at Juilliard",
-    genre: "Live reading",
+    title: "The Work Begins",
+    genre: "Live Reading at Juilliard",
     duration: "00:33",
     src: "/assets/audio/Audio%20snippet%20%232%20from%20live%20reading%20at%20Juilliard.wav",
   },
