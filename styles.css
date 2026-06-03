@@ -1164,6 +1164,36 @@ button {
   display: none;
 }
 
+.tba-player .track-list li {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.tba-player .track-list .track-genre,
+.tba-player .track-list .number,
+.tba-player .track-list .duration {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.tba-player .track-list li:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tba-player .track-list li.is-active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tba-player .track-list li.is-active,
+.tba-player .track-list li.is-active .duration,
+.tba-player .track-list li.is-active .number,
+.tba-player .track-list li.is-active .track-title {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.tba-player .track-list li.is-active .track-genre {
+  color: rgba(255, 255, 255, 0.6);
+}
+
 .tba-score {
   margin-top: clamp(64px, 8vw, 96px);
 }
