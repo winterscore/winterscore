@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To Build Anew | Sebastian Winter</title>
+    <meta name="robots" content="noindex">
+    <meta
+      name="description"
+      content="To Build Anew, a symphonic work for orchestra by Sebastian Winter."
+    >
+    <link rel="icon" href="/assets/images/winter-score-logo-black.png">
+    <link rel="preload" href="/assets/images/to-build-anew-skyline.jpg" as="image">
+    <link rel="stylesheet" href="/styles.css?v=20260603-to-build-anew">
+  </head>
+  <body class="to-build-anew-page">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <main class="to-build-anew" id="main-content">
+      <section class="tba-hero" aria-labelledby="tba-title">
+        <p class="tba-kicker">Sebastian Winter</p>
+        <h1 id="tba-title"><span>To Build</span> <span>Anew</span></h1>
+        <p class="tba-subtitle">For Orchestra</p>
+      </section>
+
+      <section class="tba-statement" aria-label="Program note">
+        <p>
+          <em>To Build Anew</em> was inspired by the new World Trade Center site in Lower Manhattan
+          and is my musical response to the personal journeys of the people involved in its construction.
+        </p>
+        <p>Duration: 17’76 minutes</p>
+      </section>
+
+      <section class="tba-listening" aria-labelledby="tba-player-title">
+        <div class="player tba-player" data-player data-page-player="to-build-anew">
+          <header class="player__header tba-player__header">
+            <h2 id="tba-player-title">Listen</h2>
+          </header>
+
+          <audio data-audio preload="metadata"></audio>
+          <p class="visually-hidden" data-player-status aria-live="polite">
+            Current track: Finale (MIDI mockup), orchestral mockup.
+          </p>
+
+          <div class="player__surface">
+            <div class="now-playing">
+              <div class="now-playing__copy">
+                <h3 data-track-title>Finale (MIDI mockup)</h3>
+                <p data-subtitle>Orchestral mockup</p>
+              </div>
+            </div>
+
+            <div class="player__timeline">
+              <div class="time-row" aria-hidden="true">
+                <span data-current>00:00</span>
+                <span data-duration>00:00</span>
+              </div>
+              <input data-seek type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek Finale (MIDI mockup)" aria-valuetext="00:00 of 04:15">
+            </div>
+
+            <div class="transport" aria-label="Audio controls">
+              <button class="icon-button" data-prev type="button" aria-label="Previous track">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 6v12"></path>
+                  <path d="M19 7.5 10 12l9 4.5z"></path>
+                </svg>
+              </button>
+              <button class="play-button" data-toggle type="button" aria-label="Play current track">
+                <svg class="play-button__art play-icon" viewBox="0 0 64 64" aria-hidden="true">
+                  <defs>
+                    <mask id="tba-player-play-cutout">
+                      <rect width="64" height="64" fill="white"></rect>
+                      <path
+                        d="M26.1 23.15
+                           C26.1 20.65 28.25 19.95 30.2 21.2
+                           L42.25 28.85
+                           C44.75 30.45 44.75 33.55 42.25 35.15
+                           L30.2 42.8
+                           C28.25 44.05 26.1 43.35 26.1 40.85
+                           Z"
+                        fill="black"
+                      ></path>
+                    </mask>
+                  </defs>
+                  <circle cx="32" cy="32" r="29" mask="url(#tba-player-play-cutout)"></circle>
+                </svg>
+                <svg class="play-button__art pause-icon" viewBox="0 0 64 64" aria-hidden="true">
+                  <defs>
+                    <mask id="tba-player-pause-cutout">
+                      <rect width="64" height="64" fill="white"></rect>
+                      <rect x="24" y="21" width="5.5" height="22" rx="2.75" fill="black"></rect>
+                      <rect x="34.5" y="21" width="5.5" height="22" rx="2.75" fill="black"></rect>
+                    </mask>
+                  </defs>
+                  <circle cx="32" cy="32" r="29" mask="url(#tba-player-pause-cutout)"></circle>
+                </svg>
+              </button>
+              <button class="icon-button" data-next type="button" aria-label="Next track">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M17 6v12"></path>
+                  <path d="m5 7.5 9 4.5-9 4.5z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <ol class="track-list" data-track-list></ol>
+        </div>
+      </section>
+
+      <section class="tba-score" aria-label="Score">
+        <a class="tba-score__link" href="/assets/documents/To%20Build%20Anew%20(Score).pdf">
+          <span class="tba-score__icon" aria-hidden="true">PDF</span>
+          <span>
+            <span class="tba-score__title">Score</span>
+            <span class="tba-score__name">To Build Anew (Score).pdf</span>
+          </span>
+        </a>
+      </section>
+    </main>
+
+    <script src="/to-build-anew/to-build-anew.js?v=20260603"></script>
+  </body>
+</html>
