@@ -175,7 +175,9 @@ audio.addEventListener("timeupdate", () => {
 });
 
 audio.addEventListener("ended", () => {
-  setActiveTrack(activeIndex + 1, true);
+  if (activeIndex < tracks.length - 1) {
+    setActiveTrack(activeIndex + 1, true);
+  }
 });
 
 seek.addEventListener("input", () => {
