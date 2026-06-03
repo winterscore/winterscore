@@ -1118,11 +1118,12 @@ button {
   display: grid;
   gap: 30px;
   margin-top: clamp(72px, 10vw, 142px);
-  color: rgba(255, 255, 255, 0.92);
-  font-family: "Open Sans", ui-sans-serif, system-ui, sans-serif;
-  font-size: clamp(16px, 1.5vw, 18px);
-  font-weight: 500;
-  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.58;
+  letter-spacing: 0;
 }
 
 .tba-statement p {
@@ -1278,8 +1279,8 @@ button {
   .tba-statement {
     gap: 24px;
     margin-top: 70px;
-    font-size: 15px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.55;
   }
 
   .tba-listening {
