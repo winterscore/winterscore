@@ -348,7 +348,7 @@ input[type="range"]:focus-visible {
   height: 100%;
   object-fit: cover;
   object-position: center center;
-  filter: saturate(0.92) contrast(1.03);
+  filter: saturate(0.92) contrast(1.03) brightness(1) blur(0px);
   transform: scale(1.0001);
   transform-origin: 50% 50%;
   transition:
@@ -367,9 +367,11 @@ input[type="range"]:focus-visible {
   transition: opacity 640ms cubic-bezier(0.4, 0, 0.25, 1);
 }
 
-.poster-card:hover img {
-  filter: saturate(1.02) contrast(1.07) brightness(1.04);
-  transform: scale(1.035);
+.poster-card:hover img,
+.poster-card:focus-visible img,
+.poster-card:focus-within img {
+  filter: saturate(1.02) contrast(1.07) brightness(1.04) blur(4px);
+  transform: scale(1.1);
 }
 
 .poster-card:hover::after {
@@ -1628,6 +1630,12 @@ button {
   .poster-card__role {
     opacity: 1;
     transform: none;
+  }
+
+  .poster-card:focus-visible img,
+  .poster-card:focus-within img {
+    filter: saturate(0.92) contrast(1.03) brightness(1) blur(0px);
+    transform: scale(1.0001);
   }
 }
 
