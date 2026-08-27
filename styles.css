@@ -376,6 +376,47 @@ input[type="range"]:focus-visible {
   opacity: 1;
 }
 
+.poster-card:focus-visible::after,
+.poster-card:focus-within::after {
+  opacity: 1;
+}
+
+.poster-card:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: -3px;
+}
+
+.poster-card__role {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 36px 10px 11px;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.66));
+  color: #ffffff;
+  font-family: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition:
+    opacity 640ms cubic-bezier(0.4, 0, 0.25, 1),
+    transform 640ms cubic-bezier(0.4, 0, 0.25, 1);
+}
+
+.poster-card:hover .poster-card__role,
+.poster-card:focus-visible .poster-card__role,
+.poster-card:focus-within .poster-card__role {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .credits-toggle {
   display: block;
   min-height: 42px;
@@ -1388,6 +1429,13 @@ button {
     scroll-snap-align: none;
   }
 
+  .poster-card__role {
+    padding: 30px 8px 9px;
+    font-size: 12px;
+    opacity: 1;
+    transform: none;
+  }
+
   .poster-card:first-child {
     border-top-left-radius: 27px;
   }
@@ -1573,6 +1621,19 @@ button {
     margin-top: 28px;
     padding-top: 0;
     font-size: 17px;
+  }
+}
+
+@media (hover: none) {
+  .poster-card__role {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-card__role {
+    transform: none;
   }
 }
 
