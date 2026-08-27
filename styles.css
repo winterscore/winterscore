@@ -371,7 +371,7 @@ input[type="range"]:focus-visible {
 .poster-card:focus-visible img,
 .poster-card:focus-within img {
   filter: saturate(1.02) contrast(1.07) brightness(1.04) blur(4px);
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .poster-card:hover::after {
